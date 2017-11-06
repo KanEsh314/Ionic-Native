@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>My Location</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>Emergency</ion-title>
     <ion-buttons end>
       <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon></button>
     </ion-buttons> 
@@ -19,9 +19,11 @@
 <ion-content padding>
 
   <div #map id="map"></div>
-  
-  <button ion-button round full (click)="getShare()">Share</button>
 
-  <img src="{{screen}}">
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="getShare()">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>
