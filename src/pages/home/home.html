@@ -1,14 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary">
+      <ion-title>Outlet</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-list>
+        <ion-item *ngFor="let outlet of outlets" (click)="getShop(outlet)">
+          <ion-avatar item-start>
+            <img src="{{outlet.img}}">
+          </ion-avatar>
+          <h2>{{outlet.title}}</h2>
+          <p>{{outlet.level}}</p>
+        </ion-item>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="getCamera()">
+      <ion-icon name="md-camera"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>
